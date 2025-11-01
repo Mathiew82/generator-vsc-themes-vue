@@ -1,0 +1,51 @@
+:root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+pre {
+  margin: 0;
+}
+
+html {
+  padding: 0;
+}
+
+pre {
+  padding: 1em;
+}
+
+body {
+  color: #eee;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.mt-1 {
+  margin-top: 1em;
+}
+
+.items-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.control-panel {
+  width: 300px;
+  background-color: white;
+  border-radius: 8px;
+  color: black;
+  padding: 1em;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.control-panel input {
+  margin-right: 1em;
+}
