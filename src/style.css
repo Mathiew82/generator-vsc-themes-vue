@@ -29,7 +29,14 @@ body {
   margin-top: 1em;
 }
 
+.justify-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .items-center {
+  height: 30px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
