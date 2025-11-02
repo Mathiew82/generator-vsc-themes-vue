@@ -41,3 +41,11 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
+
+.items-center:hover label {
+  font-weight: bold;
+}
+
+.flex-1 {
+  flex: 1;
+}

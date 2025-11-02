@@ -6,7 +6,7 @@
       :key="key"
       class="justify-between mt-05"
     >
-      <div class="items-center">
+      <div class="items-center flex-1">
         <input
           type="color"
           :id="cleanName(key)"
@@ -14,7 +14,7 @@
           :value="colorRef.value"
           @input="onChangeColor(key, $event)"
         />
-        <label :for="cleanName(key)">
+        <label :for="cleanName(key)" class="flex-1">
           {{ capitalize(cleanName(key)) }}
         </label>
       </div>
@@ -75,7 +75,7 @@ const onRestoreColor = (colorToRestore) => {
 
 .control-panel {
   width: 250px;
-  background-color: white;
+  background-color: #f0f0f0;
   border-radius: 8px;
   color: black;
   padding: 1em;
@@ -107,6 +107,7 @@ const onRestoreColor = (colorToRestore) => {
 }
 .restore-button.all {
   width: 100%;
+  border-radius: 6px;
   font-size: 12px;
   margin-top: 2em;
   padding: 0.6em 0.8em;
@@ -120,7 +121,7 @@ const onRestoreColor = (colorToRestore) => {
   width: 100%;
   background-color: var(--generate-code-color);
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   color: white;
   cursor: pointer;
   margin-top: 1em;
