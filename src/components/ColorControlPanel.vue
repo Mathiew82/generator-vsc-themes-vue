@@ -51,8 +51,6 @@ const props = defineProps({
   },
 });
 
-console.log(props.colorVars);
-
 const emit = defineEmits(["onChangeColor", "onRestoreColor"]);
 
 const cleanName = (key) => key.replace(/Color$/, "");
