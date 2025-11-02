@@ -42,7 +42,7 @@
   <span class="properties-types">font-family</span><span class="symbols">:</span> <span class="symbols">"</span><span class="strings">Segoe UI</span><span class="symbols">"</span><span class="symbols">,</span> <span class="values">Tahoma</span><span class="symbols">,</span> <span class="values">Geneva</span><span class="symbols">,</span> <span class="values">Verdana</span><span class="symbols">,</span> <span class="values">sans-serif</span><span class="symbols">;</span>
 <span class="keys">}</span>
 
-.<span class="tags">input-styles</span> <span class="keys">{</span>
+<span class="symbols">.</span><span class="tags">input-styles</span> <span class="keys">{</span>
   <span class="directives">@include</span> <span class="variables">mixins</span><span class="symbols">.</span><span class="functions">ui-control</span><span class="symbols">;</span>
   
   <span class="properties-types">width</span><span class="symbols">:</span> <span class="values">150px</span><span class="symbols">;</span>

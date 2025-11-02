@@ -41,7 +41,9 @@
     <button class="restore-button all" @click="onRestoreColors">
       Restore by default
     </button>
-    <button class="generate-code-button">Generate JSON code</button>
+    <button class="generate-code-button" @click="onGenerateJsonCode">
+      Generate JSON code
+    </button>
   </div>
 </template>
 
@@ -53,7 +55,11 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["onChangeColor", "onRestoreColor"]);
+const emit = defineEmits([
+  "onChangeColor",
+  "onRestoreColor",
+  "onRestoreColors",
+]);
 
 const cleanName = (key) => key.replace(/Color$/, "");
 const capitalize = (word) => word.charAt(0).toUpperCase() + word.slice(1);
@@ -68,6 +74,10 @@ const onRestoreColor = (colorToRestore) => {
 
 const onRestoreColors = () => {
   emit("onRestoreColors");
+};
+
+const onGenerateJsonCode = () => {
+  // TODO:
 };
 </script>
 
