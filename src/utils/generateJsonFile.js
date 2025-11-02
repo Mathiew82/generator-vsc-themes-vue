@@ -10,12 +10,12 @@ export const generateJsonFile = (colorVars) => {
         "statusBar.background": "#333331",
         "statusBar.foreground": "#bbbbbb",
         "statusBar.noFolderBackground": "#222220",
-        "sideBar.background": "#222220",
+        "sideBar.background": "#1e1e1c",
         "sideBarSectionHeader.background": "#222220",
         "sideBarSectionHeader.foreground": "#bbbbbb",
-        "list.inactiveSelectionBackground": "#303a36",
-        "list.inactiveSelectionForeground": "#eaeaea",
-        "list.hoverBackground": "#111110",
+        "list.inactiveSelectionBackground": "#343e3a",
+        "list.inactiveSelectionForeground": "#eaf6ea",
+        "list.hoverBackground": "#2a3430",
       },
       tokenColors: [
         {
