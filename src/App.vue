@@ -11,22 +11,9 @@
 
 <script setup>
 import { ref } from "vue";
+import { initColorValues } from "./data/initColorValues";
 import ColorControlPanel from "./components/ColorControlPanel.vue";
 import CustomizedCode from "./components/CustomizedCode.vue";
-
-const initColorValues = {
-  backgroundColor: "#222220",
-  tagsColor: "#f9c067",
-  symbolsColor: "#bbbbbb",
-  variablesColor: "#e6e9f0",
-  commentsColor: "#546E7A",
-  functionsColor: "#92aadf",
-  directivesColor: "#afa691",
-  keywordsColor: "#fcc9b2",
-  stringsColor: "#89b4c7",
-  propertiesTypesColor: "#B2CCD6",
-  valuesColor: "#d2a272",
-};
 
 const backgroundColor = ref(initColorValues.backgroundColor);
 const tagsColor = ref(initColorValues.tagsColor);
