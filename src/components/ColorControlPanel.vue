@@ -38,7 +38,9 @@
         </button>
       </div>
     </div>
-    <button class="restore-button all">Restore by default</button>
+    <button class="restore-button all" @click="onRestoreColors">
+      Restore by default
+    </button>
     <button class="generate-code-button">Generate JSON code</button>
   </div>
 </template>
@@ -62,6 +64,10 @@ const onChangeColor = (contentToChange, event) => {
 
 const onRestoreColor = (colorToRestore) => {
   emit("onRestoreColor", colorToRestore);
+};
+
+const onRestoreColors = () => {
+  emit("onRestoreColors");
 };
 </script>
 

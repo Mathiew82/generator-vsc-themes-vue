@@ -5,6 +5,7 @@
       :colorVars="colorVars"
       @onChangeColor="onChangeColor"
       @onRestoreColor="onRestoreColor"
+      @onRestoreColors="onRestoreColors"
     />
   </div>
 </template>
@@ -47,6 +48,12 @@ const onChangeColor = (params) => {
 
 const onRestoreColor = (colorToRestore) => {
   colorVars[colorToRestore].value = initColorValues[colorToRestore];
+};
+
+const onRestoreColors = () => {
+  Object.keys(colorVars).forEach((colorKey) => {
+    colorVars[colorKey].value = initColorValues[colorKey];
+  });
 };
 </script>
 
