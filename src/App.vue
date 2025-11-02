@@ -3,39 +3,39 @@
     <pre>
 <span class="symbols">&lt;</span><span class="tags">template</span><span class="symbols">&gt;</span>
   <span class="symbols">&lt;</span><span class="tags">input</span>
-    v-model="<span class="variables">model</span>"
-    class="ui-input py-2 px-5 rounded-full text-sm text-white outline-0"
-    :class="<span class="variables">defaultStyles</span>"
+    <span class="keywords">v-model</span><span class="symbols">="</span><span class="variables">model</span><span class="symbols">"</span>
+    <span class="keywords">class</span><span class="symbols">="</span>ui-input py-2 px-5 rounded-full text-sm text-white outline-0<span class="symbols">"</span>
+    <span class="symbols">:</span><span class="keywords">class</span><span class="symbols">="</span><span class="variables">defaultStyles</span><span class="symbols">"</span>
   <span class="symbols">/&gt;</span>
 <span class="symbols">&lt;/</span><span class="tags">template</span><span class="symbols">&gt;</span>
 
-<span class="symbols">&lt;</span><span class="tags">script</span> setup lang="ts"<span class="symbols">&gt;</span>
-import { <span class="tags">ref</span> } from 'vue'
-import { <span class="tags">useType</span> } from '~/components/ui/composable/useType'
-import type { <span class="tags">Event</span> } from '@/types/Event'
+<span class="symbols">&lt;</span><span class="tags">script</span> <span class="keywords">setup lang</span><span class="symbols">="</span>ts<span class="symbols">"</span><span class="symbols">&gt;</span>
+<span class="directives">import</span> { <span class="tags">ref</span> } <span class="directives">from</span> <span class="symbols">'</span>vue<span class="symbols">'</span>
+<span class="directives">import</span> { <span class="tags">useType</span> } <span class="directives">from</span> <span class="symbols">'</span>~/components/ui/composable/useType<span class="symbols">'</span>
+<span class="directives">import type</span> { <span class="tags">Event</span> } <span class="directives">from</span> <span class="symbols">'</span>@/types/Event<span class="symbols">'</span>
 
-const <span class="variables">model</span> = <span class="functions">defineModel</span><span class="symbols">&lt;</span>string<span class="symbols">&gt;</span>()
+<span class="keywords">const</span> <span class="variables">model</span> = <span class="functions">defineModel</span><span class="symbols">&lt;</span>string<span class="symbols">&gt;</span>()
 
-const { <span class="variables">defaultStyles</span> } = <span class="functions">useType</span>('default')
+<span class="keywords">const</span> { <span class="variables">defaultStyles</span> } = <span class="functions">useType</span>(<span class="symbols">'</span>default<span class="symbols">'</span>)
 
-export const <span class="functions">useMyEvents</span> = () => {
-  const <span class="functions">addEvent</span> = (newEvent: Event): void => {
+<span class="directives">export</span> const <span class="functions">useMyEvents</span> = () => {
+  <span class="keywords">const</span> <span class="functions">addEvent</span> <span class="keywords">=</span> (newEvent: Event): void => {
     <span class="variables">myEvents</span>.<span class="variables">value</span>.push(newEvent)
   }
 
-  const <span class="functions">removeEvent</span> = (eventId: number): void => {
-    <span class="variables">myEvents</span>.<span class="variables">value</span> = myEvents.value.<span class="functions">filter</span>((event) => event.<span class="variables">id</span> !== eventId)
+  <span class="keywords">const</span> <span class="functions">removeEvent</span> <span class="keywords">=</span> (eventId: number): void => {
+    <span class="variables">myEvents</span>.<span class="variables">value</span> <span class="keywords">=</span> myEvents.value.<span class="functions">filter</span>((event) => event.<span class="variables">id</span> !== eventId)
   }
 
-  return {
+  <span class="directives">return</span> {
     <span class="functions">addEvent</span>,
     <span class="functions">removeEvent</span>,
   }
 }
 <span class="symbols">&lt;/</span><span class="tags">script</span><span class="symbols">&gt;</span>
 
-<span class="symbols">&lt;</span><span class="tags">style</span> lang="scss"<span class="symbols">&gt;</span>
-@use '@/assets/scss/variables' as <span class="variables">vars</span>;
+<span class="symbols">&lt;</span><span class="tags">style</span> <span class="keywords">lang</span><span class="symbols">="</span>scss<span class="symbols">"</span><span class="symbols">&gt;</span>
+<span class="directives">@use</span> '@/assets/scss/variables' <span class="directives">as</span> <span class="variables">vars</span>;
 
 <span class="comments">/* UI Library */</span>
 <span class="tags">body</span> {
@@ -69,6 +69,7 @@ const initColorValues = {
   commentsColor: "#546E7A",
   functionsColor: "#92aadf",
   directivesColor: "#afa691",
+  keywordsColor: "#fcc9b2",
 };
 
 const backgroundColor = ref(initColorValues.backgroundColor);
@@ -78,6 +79,7 @@ const variablesColor = ref(initColorValues.variablesColor);
 const commentsColor = ref(initColorValues.commentsColor);
 const functionsColor = ref(initColorValues.functionsColor);
 const directivesColor = ref(initColorValues.directivesColor);
+const keywordsColor = ref(initColorValues.keywordsColor);
 
 const colorVars = {
   backgroundColor,
@@ -87,6 +89,7 @@ const colorVars = {
   commentsColor,
   functionsColor,
   directivesColor,
+  keywordsColor,
 };
 
 const onChangeColor = (params) => {
@@ -183,5 +186,9 @@ const onRestoreColor = (colorToRestore) => {
 
 .directives {
   color: v-bind(directivesColor);
+}
+
+.keywords {
+  color: v-bind(keywordsColor);
 }
 </style>
