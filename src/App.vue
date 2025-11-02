@@ -14,22 +14,22 @@ import { <span class="tags">ref</span> } from 'vue'
 import { <span class="tags">useType</span> } from '~/components/ui/composable/useType'
 import type { <span class="tags">Event</span> } from '@/types/Event'
 
-const <span class="variables">model</span> = defineModel<span class="symbols">&lt;</span>string<span class="symbols">&gt;</span>()
+const <span class="variables">model</span> = <span class="functions">defineModel</span><span class="symbols">&lt;</span>string<span class="symbols">&gt;</span>()
 
-const { <span class="variables">defaultStyles</span> } = useType('default')
+const { <span class="variables">defaultStyles</span> } = <span class="functions">useType</span>('default')
 
-export const useMyEvents = () => {
-  const addEvent = (newEvent: Event): void => {
+export const <span class="functions">useMyEvents</span> = () => {
+  const <span class="functions">addEvent</span> = (newEvent: Event): void => {
     <span class="variables">myEvents</span>.<span class="variables">value</span>.push(newEvent)
   }
 
-  const removeEvent = (eventId: number): void => {
-    <span class="variables">myEvents</span>.<span class="variables">value</span> = myEvents.value.filter((event) => event.<span class="variables">id</span> !== eventId)
+  const <span class="functions">removeEvent</span> = (eventId: number): void => {
+    <span class="variables">myEvents</span>.<span class="variables">value</span> = myEvents.value.<span class="functions">filter</span>((event) => event.<span class="variables">id</span> !== eventId)
   }
 
   return {
-    addEvent,
-    removeEvent,
+    <span class="functions">addEvent</span>,
+    <span class="functions">removeEvent</span>,
   }
 }
 <span class="symbols">&lt;/</span><span class="tags">script</span><span class="symbols">&gt;</span>
@@ -44,183 +44,22 @@ export const useMyEvents = () => {
 }
 
 .<span class="tags">input-styles</span> {
+  @include <span class="variables">mixins</span>.ui-control;
   color: #bbb;
 }
 <span class="symbols">&lt;/</span><span class="tags">style</span><span class="symbols">&gt;</span>
     </pre>
-
-    <div class="control-panel">
-      <h2>Select theme colors</h2>
-      <div class="justify-between">
-        <div class="items-center">
-          <input
-            type="color"
-            id="background"
-            name="background"
-            :value="backgroundColor"
-            @input="onChangeColor('backgroundColor', $event)"
-          />
-          <label for="background">Background</label>
-        </div>
-        <div class="items-center">
-          <button
-            class="restore-button"
-            @click="onRestoreColor('backgroundColor')"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="#ffffff"
-              class="size-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18 18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div class="justify-between mt-1">
-        <div class="items-center">
-          <input
-            type="color"
-            id="tags"
-            name="tags"
-            :value="tagsColor"
-            @input="onChangeColor('tagsColor', $event)"
-          />
-          <label for="tags">Tags</label>
-        </div>
-        <div class="items-center">
-          <button class="restore-button" @click="onRestoreColor('tagsColor')">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="#ffffff"
-              class="size-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18 18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div class="justify-between mt-1">
-        <div class="items-center">
-          <input
-            type="color"
-            id="symbols"
-            name="symbols"
-            :value="symbolsColor"
-            @input="onChangeColor('symbolsColor', $event)"
-          />
-          <label for="symbols">Symbols</label>
-        </div>
-        <div class="items-center">
-          <button
-            class="restore-button"
-            @click="onRestoreColor('symbolsColor')"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="#ffffff"
-              class="size-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18 18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div class="justify-between mt-1">
-        <div class="items-center">
-          <input
-            type="color"
-            id="variables"
-            name="variables"
-            :value="variablesColor"
-            @input="onChangeColor('variablesColor', $event)"
-          />
-          <label for="variables">Variables</label>
-        </div>
-        <div class="items-center">
-          <button
-            class="restore-button"
-            @click="onRestoreColor('variablesColor')"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="#ffffff"
-              class="size-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18 18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div class="justify-between mt-1">
-        <div class="items-center">
-          <input
-            type="color"
-            id="comments"
-            name="comments"
-            :value="commentsColor"
-            @input="onChangeColor('commentsColor', $event)"
-          />
-          <label for="comments">Comments</label>
-        </div>
-        <div class="items-center">
-          <button
-            class="restore-button"
-            @click="onRestoreColor('commentsColor')"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="#ffffff"
-              class="size-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18 18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <button class="restore-button all">Restore all</button>
-      <button class="generate-code-button">Generate code</button>
-    </div>
+    <ColorControlPanel
+      :colorVars="colorVars"
+      @onChangeColor="onChangeColor"
+      @onRestoreColor="onRestoreColor"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import ColorControlPanel from "./components/ColorControlPanel.vue";
 
 const initColorValues = {
   backgroundColor: "#222220",
@@ -228,6 +67,8 @@ const initColorValues = {
   symbolsColor: "#bbbbbb",
   variablesColor: "#e6e9f0",
   commentsColor: "#546E7A",
+  functionsColor: "#92aadf",
+  directivesColor: "#afa691",
 };
 
 const backgroundColor = ref(initColorValues.backgroundColor);
@@ -235,6 +76,8 @@ const tagsColor = ref(initColorValues.tagsColor);
 const symbolsColor = ref(initColorValues.symbolsColor);
 const variablesColor = ref(initColorValues.variablesColor);
 const commentsColor = ref(initColorValues.commentsColor);
+const functionsColor = ref(initColorValues.functionsColor);
+const directivesColor = ref(initColorValues.directivesColor);
 
 const colorVars = {
   backgroundColor,
@@ -242,10 +85,12 @@ const colorVars = {
   symbolsColor,
   variablesColor,
   commentsColor,
+  functionsColor,
+  directivesColor,
 };
 
-const onChangeColor = (contentToChange, event) => {
-  colorVars[contentToChange].value = event.target.value;
+const onChangeColor = (params) => {
+  colorVars[params.contentToChange].value = params.event.target.value;
 };
 
 const onRestoreColor = (colorToRestore) => {
@@ -279,7 +124,7 @@ const onRestoreColor = (colorToRestore) => {
 }
 
 .restore-button {
-  background-color: #555555;
+  background-color: #773333;
   border: none;
   border-radius: 3px;
   color: white;
@@ -289,7 +134,7 @@ const onRestoreColor = (colorToRestore) => {
   padding: 4px;
 }
 .restore-button:hover {
-  background-color: #777777;
+  background-color: #995555;
 }
 .restore-button.all {
   width: 100%;
@@ -304,7 +149,7 @@ const onRestoreColor = (colorToRestore) => {
 
 .generate-code-button {
   width: 100%;
-  background-color: black;
+  background-color: #224455;
   border: none;
   border-radius: 8px;
   color: white;
@@ -313,7 +158,7 @@ const onRestoreColor = (colorToRestore) => {
   padding: 0.8em 1em;
 }
 .generate-code-button:hover {
-  background-color: #333333;
+  background-color: #446677;
 }
 
 .tags {
@@ -330,5 +175,13 @@ const onRestoreColor = (colorToRestore) => {
 
 .comments {
   color: v-bind(commentsColor);
+}
+
+.functions {
+  color: v-bind(functionsColor);
+}
+
+.directives {
+  color: v-bind(directivesColor);
 }
 </style>
