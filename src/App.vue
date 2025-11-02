@@ -56,63 +56,6 @@ const onRestoreColor = (colorToRestore) => {
   background-color: v-bind(backgroundColor);
 }
 
-.control-panel {
-  width: 250px;
-  background-color: white;
-  border-radius: 8px;
-  color: black;
-  padding: 1em;
-  position: fixed;
-  top: 10px;
-  right: 10px;
-}
-
-.control-panel h2 {
-  margin: 0 0 1em 0;
-}
-
-.control-panel input {
-  margin-right: 1em;
-}
-
-.restore-button {
-  background-color: #773333;
-  border: none;
-  border-radius: 3px;
-  color: white;
-  cursor: pointer;
-  font-size: 11px;
-  margin-top: 2px;
-  padding: 4px;
-}
-.restore-button:hover {
-  background-color: #995555;
-}
-.restore-button.all {
-  width: 100%;
-  font-size: 12px;
-  margin-top: 2em;
-  padding: 0.6em 0.8em;
-}
-.restore-button svg {
-  width: 16px;
-  height: 16px;
-}
-
-.generate-code-button {
-  width: 100%;
-  background-color: #224455;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  margin-top: 1em;
-  padding: 0.8em 1em;
-}
-.generate-code-button:hover {
-  background-color: #446677;
-}
-
 .keys {
   color: #f9d824;
 }
