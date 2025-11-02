@@ -18,11 +18,10 @@ import CustomizedCode from "./components/CustomizedCode.vue";
 
 const backgroundColor = ref(initColorValues.backgroundColor);
 const tagsColor = ref(initColorValues.tagsColor);
-const symbolsColor = ref(initColorValues.symbolsColor);
+const symbolsDirectivesColor = ref(initColorValues.symbolsDirectivesColor);
 const variablesColor = ref(initColorValues.variablesColor);
 const commentsColor = ref(initColorValues.commentsColor);
 const functionsColor = ref(initColorValues.functionsColor);
-const directivesColor = ref(initColorValues.directivesColor);
 const keywordsColor = ref(initColorValues.keywordsColor);
 const stringsColor = ref(initColorValues.stringsColor);
 const propertiesTypesColor = ref(initColorValues.propertiesTypesColor);
@@ -31,11 +30,10 @@ const valuesColor = ref(initColorValues.valuesColor);
 const colorVars = {
   backgroundColor,
   tagsColor,
-  symbolsColor,
+  symbolsDirectivesColor,
   variablesColor,
   commentsColor,
   functionsColor,
-  directivesColor,
   keywordsColor,
   stringsColor,
   propertiesTypesColor,
@@ -71,8 +69,8 @@ const onRestoreColors = () => {
   color: v-bind(tagsColor);
 }
 
-.symbols {
-  color: v-bind(symbolsColor);
+.symbols-directives {
+  color: v-bind(symbolsDirectivesColor);
 }
 
 .variables {
@@ -85,10 +83,6 @@ const onRestoreColors = () => {
 
 .functions {
   color: v-bind(functionsColor);
-}
-
-.directives {
-  color: v-bind(directivesColor);
 }
 
 .keywords {

@@ -48,6 +48,8 @@
 </template>
 
 <script setup>
+import { generateJsonFile } from "../utils/generateJsonFile";
+
 const props = defineProps({
   colorVars: {
     type: Object,
@@ -77,7 +79,17 @@ const onRestoreColors = () => {
 };
 
 const onGenerateJsonCode = () => {
-  // TODO:
+  const jsonString = generateJsonFile(props.colorVars);
+
+  navigator.clipboard
+    .writeText(jsonString)
+    .then(() => {
+      alert("✅ JSON copiado al portapapeles");
+    })
+    .catch((err) => {
+      console.error("Error al copiar el JSON:", err);
+      alert("❌ No se pudo copiar el JSON");
+    });
 };
 </script>
 
