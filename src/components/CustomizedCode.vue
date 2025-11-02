@@ -33,7 +33,7 @@
 <span class="keys">}</span>
 <span class="symbols">&lt;/</span><span class="tags">script</span><span class="symbols">&gt;</span>
 
-<span class="symbols">&lt;</span><span class="tags">style</span> <span class="keywords">lang</span><span class="symbols">="</span>scss<span class="symbols">"</span><span class="symbols">&gt;</span>
+<span class="symbols">&lt;</span><span class="tags">style</span> <span class="keywords">lang</span><span class="symbols">="</span><span class="strings">scss</span><span class="symbols">"</span><span class="symbols">&gt;</span>
 <span class="directives">@use</span> <span class="symbols">'</span><span class="strings">@/assets/scss/variables</span><span class="symbols">'</span> <span class="directives">as</span> <span class="variables">vars</span><span class="symbols">;</span>
 
 <span class="comments">/* UI Library */</span>
